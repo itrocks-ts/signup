@@ -1,0 +1,63 @@
+{
+	"author": {
+		"name": "Baptiste Pillot",
+		"email": "baptiste@pillot.fr"
+	},
+	"dependencies": {
+		"@itrocks/action": "latest",
+		"@itrocks/action-bar": "latest",
+		"@itrocks/action-request": "latest",
+		"@itrocks/auto-redirect": "latest",
+		"@itrocks/data-to-object": "latest",
+		"@itrocks/edit": "latest",
+		"@itrocks/output": "latest",
+		"@itrocks/storage": "latest",
+		"@itrocks/user": "latest",
+		"@itrocks/ux-core": "latest"
+	},
+	"description": "User registration management for @itrocks/user, including account creation, and secure onboarding",
+	"devDependencies": {
+		"sass": "^1.83",
+		"typescript": "~5.6"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"exports": "./cjs/register.js",
+	"homepage": "https://it.rocks",
+	"files": [
+		"LICENSE",
+		"README.md",
+		"routes.json",
+		"cjs/*",
+		"css/*",
+		"!*.map"
+	],
+	"keywords": [
+		"account",
+		"authentication",
+		"backend",
+		"creation",
+		"email",
+		"it.rocks",
+		"onboarding",
+		"register",
+		"registration",
+		"security",
+		"sign-up",
+		"verification",
+		"user"
+	],
+	"license": "ISC",
+	"name": "@itrocks/register",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/itrocks-ts/register.git"
+	},
+	"scripts": {
+		"build": "tsc -p tsconfig.json && cp src/*.html cjs/ && npm run build:css",
+		"build:css": "sass --no-source-map src:css && cp src/*.svg css/"
+	},
+	"types": "./cjs/register.d.ts",
+	"version": "0.0.1"
+}
