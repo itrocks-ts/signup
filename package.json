@@ -4,16 +4,11 @@
 		"email": "baptiste@pillot.fr"
 	},
 	"dependencies": {
-		"@itrocks/action": "latest",
-		"@itrocks/action-bar": "latest",
-		"@itrocks/action-request": "latest",
+		"@itrocks/action-pack": "latest",
 		"@itrocks/auto-redirect": "latest",
-		"@itrocks/data-to-object": "latest",
 		"@itrocks/edit": "latest",
 		"@itrocks/output": "latest",
-		"@itrocks/storage": "latest",
-		"@itrocks/user": "latest",
-		"@itrocks/ux-core": "latest"
+		"@itrocks/user": "latest"
 	},
 	"description": "User registration management for @itrocks/user, including account creation, and secure onboarding",
 	"devDependencies": {
@@ -59,5 +54,5 @@
 		"build:css": "sass --no-source-map src:css && cp src/*.svg css/"
 	},
 	"types": "./cjs/register.d.ts",
-	"version": "0.0.1"
+	"version": "0.0.2"
 }
