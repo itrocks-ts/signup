@@ -4,7 +4,7 @@ import { dataToObject } from '@itrocks/data-to-object'
 import { dataSource }   from '@itrocks/storage'
 import { User }         from '@itrocks/user'
 
-export default class Signup extends Action
+export class Signup extends Action
 {
 
 	async html(request: Request<User>)
