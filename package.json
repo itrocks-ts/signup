@@ -4,13 +4,15 @@
 		"email": "baptiste@pillot.fr"
 	},
 	"dependencies": {
+		"@itrocks/action-bar": "latest",
 		"@itrocks/action-pack": "latest",
 		"@itrocks/auto-redirect": "latest",
 		"@itrocks/edit": "latest",
 		"@itrocks/output": "latest",
-		"@itrocks/user": "latest"
+		"@itrocks/user": "latest",
+		"@itrocks/ux-core": "latest"
 	},
-	"description": "User registration management for @itrocks/user, including account creation, and secure onboarding",
+	"description": "Handles user sign-up for @itrocks/user, with account creation and secure onboarding flow",
 	"devDependencies": {
 		"sass": "^1.83",
 		"typescript": "~5.6"
@@ -18,7 +20,7 @@
 	"engines": {
 		"node": ">=18"
 	},
-	"exports": "./cjs/register.js",
+	"exports": "./cjs/sign-up.js",
 	"homepage": "https://it.rocks",
 	"files": [
 		"LICENSE",
@@ -44,15 +46,15 @@
 		"user"
 	],
 	"license": "ISC",
-	"name": "@itrocks/register",
+	"name": "@itrocks/sign-up",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/itrocks-ts/register.git"
+		"url": "git+https://github.com/itrocks-ts/sign-up.git"
 	},
 	"scripts": {
 		"build": "tsc -p tsconfig.json && cp src/*.html cjs/ && npm run build:css",
 		"build:css": "sass --no-source-map src:css && cp src/*.svg css/"
 	},
-	"types": "./cjs/register.d.ts",
-	"version": "0.0.2"
+	"types": "./cjs/sign-up.d.ts",
+	"version": "0.0.3"
 }
