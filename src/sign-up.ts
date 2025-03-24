@@ -9,7 +9,7 @@ export default class SignUp extends Action
 
 	async html(request: Request<User>)
 	{
-		let templateName = 'register'
+		let templateName = 'sign-up'
 		let user         = new request.type
 
 		if (Object.keys(request.request.data).length) {
@@ -22,7 +22,7 @@ export default class SignUp extends Action
 					|| (await dao.search(User, {email: login}))[0]
 					|| (await dao.search(User, {login: email}))[0]
 				if (found) {
-					templateName = 'register-error'
+					templateName = 'sign-up-error'
 					user         = found
 				}
 				else {
@@ -31,7 +31,7 @@ export default class SignUp extends Action
 				}
 			}
 			else {
-				templateName = 'register-error'
+				templateName = 'sign-up-error'
 			}
 		}
 
