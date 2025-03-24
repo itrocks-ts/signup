@@ -4,12 +4,12 @@ import { dataToObject } from '@itrocks/data-to-object'
 import { dataSource }   from '@itrocks/storage'
 import { User }         from '@itrocks/user'
 
-export default class SignUp extends Action
+export default class Signup extends Action
 {
 
 	async html(request: Request<User>)
 	{
-		let templateName = 'sign-up'
+		let templateName = 'signup'
 		let user         = new request.type
 
 		if (Object.keys(request.request.data).length) {
@@ -22,7 +22,7 @@ export default class SignUp extends Action
 					|| (await dao.search(User, {email: login}))[0]
 					|| (await dao.search(User, {login: email}))[0]
 				if (found) {
-					templateName = 'sign-up-error'
+					templateName = 'signup-error'
 					user         = found
 				}
 				else {
@@ -31,7 +31,7 @@ export default class SignUp extends Action
 				}
 			}
 			else {
-				templateName = 'sign-up-error'
+				templateName = 'signup-error'
 			}
 		}
 
