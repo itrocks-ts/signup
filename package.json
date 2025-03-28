@@ -53,9 +53,9 @@
 		"url": "git+https://github.com/itrocks-ts/signup.git"
 	},
 	"scripts": {
-		"build": "tsc -p tsconfig.json && cp src/*.html cjs/ && npm run build:css",
+		"build": "tsc && cp src/*.html cjs/ && npm run build:css",
 		"build:css": "sass --no-source-map src:css && cp src/*.svg css/"
 	},
 	"types": "./cjs/signup.d.ts",
-	"version": "0.0.9"
+	"version": "0.0.10"
 }
