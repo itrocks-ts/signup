@@ -1,2 +1,6 @@
+access:
+  free:
+    - /user/signup
+
 routes:
   /user/signup: '@itrocks/signup'
