@@ -17,10 +17,10 @@ export class Signup extends Action
 			const { email, login, password } = user
 			if (email.length && login.length && password.length) {
 				const dao   = dataSource()
-				const found = (await dao.search(User, {email}))[0]
-					|| (await dao.search(User, {login}))[0]
-					|| (await dao.search(User, {email: login}))[0]
-					|| (await dao.search(User, {login: email}))[0]
+				const found = await dao.searchOne(User, {email})
+					|| await dao.searchOne(User, {login})
+					|| await dao.searchOne(User, {email: login})
+					|| await dao.searchOne(User, {login: email})
 				if (found) {
 					templateName = 'signup-error'
 					user         = found
