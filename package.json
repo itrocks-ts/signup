@@ -15,7 +15,7 @@
 	"description": "Handles user sign-up for @itrocks/user, with account creation and secure onboarding flow",
 	"devDependencies": {
 		"sass": "^1.83",
-		"typescript": "~5.6"
+		"typescript": "~5.8"
 	},
 	"engines": {
 		"node": ">=18"
@@ -57,5 +57,5 @@
 		"build:css": "sass --no-source-map src:css && cp src/*.svg css/"
 	},
 	"types": "./cjs/signup.d.ts",
-	"version": "0.0.13"
+	"version": "0.0.14"
 }
