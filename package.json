@@ -31,20 +31,31 @@
 		"!*.map"
 	],
 	"keywords": [
+		"action",
 		"account",
+		"API",
 		"authentication",
 		"backend",
+		"component",
 		"creation",
 		"email",
+		"form",
+		"html",
 		"it.rocks",
+		"json",
 		"onboarding",
 		"register",
 		"registration",
 		"security",
 		"sign up",
+		"sign up form",
 		"signup",
+		"signup form",
+		"UI",
+		"user",
+		"UX",
 		"verification",
-		"user"
+		"view"
 	],
 	"license": "ISC",
 	"name": "@itrocks/signup",
@@ -57,5 +68,5 @@
 		"build:css": "sass --no-source-map src:css && cp src/*.svg css/"
 	},
 	"types": "./cjs/signup.d.ts",
-	"version": "0.0.16"
+	"version": "0.0.17"
 }
