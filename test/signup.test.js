@@ -39,6 +39,26 @@ before(() => {
 })
 
 describe('Signup', () => {
+	it('lets applications replace templates without replacing sign-up logic', async () => {
+		class BrandedSignup extends Signup
+		{
+			templateFile(name)
+			{
+				return '/application/' + name + '.html'
+			}
+		}
+		const action = new BrandedSignup()
+		action.htmlTemplateResponse = async (_data, _request, template, statusCode = 200) => ({
+			statusCode,
+			template
+		})
+
+		assert.deepEqual(await action.html(signupRequest({ email: 'invalid', login: '', password: '' })), {
+			statusCode: 422,
+			template:   '/application/signup-error.html'
+		})
+	})
+
 	it('creates a minimal private user with a derived password', async () => {
 		const response = await signup().html(signupRequest({
 			age:      '42',

@@ -49,10 +49,10 @@ export class Signup<T extends User = User> extends Action<T>
 				const headers: Headers = {
 					'Retry-After': Math.max(attempt.retryAfterSeconds, total.retryAfterSeconds).toString()
 				}
-				return this.htmlTemplateResponse(user, request, __dirname + '/signup-error.html', 429, headers)
+				return this.htmlTemplateResponse(user, request, this.templateFile('signup-error'), 429, headers)
 			}
 			if (!credentialsAreValid(email, login, password)) {
-				return this.htmlTemplateResponse(user, request, __dirname + '/signup-error.html', 422)
+				return this.htmlTemplateResponse(user, request, this.templateFile('signup-error'), 422)
 			}
 
 			await dataToObject(user, { ...data, email, login, password: '' })
@@ -73,7 +73,12 @@ export class Signup<T extends User = User> extends Action<T>
 			}
 		}
 
-		return this.htmlTemplateResponse(user, request, __dirname + '/' + templateName + '.html', statusCode)
+		return this.htmlTemplateResponse(user, request, this.templateFile(templateName), statusCode)
+	}
+
+	protected templateFile(name: string): string
+	{
+		return __dirname + '/' + name + '.html'
 	}
 
 }
