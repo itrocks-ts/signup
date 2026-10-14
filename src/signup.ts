@@ -1,6 +1,5 @@
 import { Action }       from '@itrocks/action'
 import { Request }      from '@itrocks/action-request'
-import { Type }         from '@itrocks/class-type'
 import { dataToObject } from '@itrocks/data-to-object'
 import { hashPassword } from '@itrocks/password/transformers'
 import { Headers }      from '@itrocks/request-response'
@@ -33,9 +32,9 @@ export class Signup<T extends User = User> extends Action<T>
 
 	async html(request: Request<T>)
 	{
-		const userType: Type<User> = request.type
 		let statusCode   = 200
 		let templateName = 'signup'
+		const userType   = request.type
 		const user       = new userType
 
 		if (Object.keys(request.request.data).length) {
