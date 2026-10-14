@@ -16,6 +16,7 @@
 	},
 	"description": "Handles user sign-up for @itrocks/user, with account creation and secure onboarding flow",
 	"devDependencies": {
+		"@itrocks/class-file": "latest",
 		"@types/node": "^24.10",
 		"sass": "^1.95",
 		"typescript": "^7.0"
@@ -72,5 +73,5 @@
 		"prepack": "npm run build",
 		"test": "npm run build && node --test --test-isolation=none test/*.test.js"
 	},
-	"version": "0.4.2"
+	"version": "0.4.3"
 }
